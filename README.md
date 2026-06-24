@@ -9,4 +9,7 @@ ___
 - Create one S3 bucket for storing web-server & app-server code.
 - Upload the code to your S3 from your local system.
 - Create another S3 bucket for VPC flow logs.
-
+<img width="1507" height="802" alt="Screenshot 2026-06-24 at 9 21 47 AM" src="https://github.com/user-attachments/assets/1b194477-495b-46ef-a8e1-4640602abfea" />
+<img width="1510" height="798" alt="Screenshot 2026-06-24 at 9 22 10 AM" src="https://github.com/user-attachments/assets/94d8511b-d43d-4c1f-8dd4-a51f5743b701" />
+In my case "3tier-22-06-2026" bucket-name to store the code and "vpc-flowlogs-22-06-2026" bucket-name for VPC flow logs.
+---
