@@ -1,5 +1,20 @@
 # 3-Tier-AWS-Project
-## This project demonstrates the implementation of a production-ready 3-tier architecture on AWS. The infrastructure is designed for scalability, high availability, security, monitoring, and fault tolerance. AWS services used in this project include VPC, EC2, S3, Application Load Balancer, Auto Scaling Group, IAM, CloudWatch, SNS, CloudTrail, and RDS.
+## This project demonstrates the implementation of a production-ready 3-tier architecture on AWS. The infrastructure is designed for scalability, high availability, security, monitoring, and fault tolerance. 
+## AWS Services Used
+
+- Amazon VPC
+- Amazon EC2
+- Amazon S3
+- Amazon RDS
+- Application Load Balancer
+- Auto Scaling Group
+- IAM
+- AWS Systems Manager
+- Amazon CloudWatch
+- Amazon SNS
+- AWS CloudTrail
+- Amazon Route 53 (Optional)
+
 <img width="1214" height="548" alt="3TierArch 0486e7150e53d305d1c2" src="https://github.com/user-attachments/assets/6eb36c04-037f-4359-bacb-dd35560e20ae" />
 
 ### Step 1: Download Code from GitHub in Your Local System
@@ -54,7 +69,7 @@ ___
 <img width="1505" height="670" alt="Screenshot 2026-06-24 at 10 06 05 AM" src="https://github.com/user-attachments/assets/57a2a883-1594-497b-b1ce-4bb594d41c5b" />
 <img width="1505" height="670" alt="Screenshot 2026-06-24 at 10 06 05 AM" src="https://github.com/user-attachments/assets/22f995f6-bddc-4936-badd-001fd948ff3f" />
 
-> **Note:** Amazon RDS Multi-AZ deployments are not eligible under the AWS Free Tier. Additionally, when using the Free Tier, RDS instances can only be deployed in the Default VPC. Deploying an RDS instance in a custom VPC may incur charges.
+> **Note:** Amazon RDS Multi-AZ deployments are not eligible under the AWS Free Tier. Additionally, when using the Free Tier, RDS instances can only be deployed in the Default VPC to be eligible for free tier. Deploying an RDS instance in a custom VPC may incur charges.
 
 ___
 
@@ -83,7 +98,7 @@ ___
 - Create external load balancer.
 - Create autoscaling group.
 
-Repeat the same steps for the Web server.
+</> Repeat the same process used for the Application Tier to create the Web Tier, including the AMI, Launch Template, Target Group, External Load Balancer, and Auto Scaling Group.
 
 ___
 
