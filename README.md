@@ -18,4 +18,13 @@ In my case "3tier-22-06-2026" bucket-name to store the code and "vpc-flowlogs-22
 <img width="1000" height="500" alt="Screenshot 2026-06-24 at 9 34 41 AM" src="https://github.com/user-attachments/assets/f8e78a58-2c56-4b50-ac4f-a3e74e32ac8a" />
 As you can see, Role has 2 permissions. **AmazonS3ReadOnlyAccess and AmazonSSMManagedInstanceCore**.
 ___
+### Step 4: Create VPC, Subnets, IGW, NAT-GW, RT
+- Enable auto-assign public IP for web-tier public subnets.
+- Create flow logs for VPC & use the S3 bucket created above.
+<img width="1512" height="803" alt="Screenshot 2026-06-24 at 9 55 32 AM" src="https://github.com/user-attachments/assets/dc17a0cd-873a-4aab-a38c-69feb16e40da" />
+The VPC is designed using a 3-tier architecture consisting of Web, Application, and Database tiers distributed across multiple Availability Zones for high availability.
+- **Web Tier:** Deployed in public subnets with a route to the Internet Gateway (IGW), allowing inbound and outbound internet access.
+- **Application Tier:** Deployed in private subnets with outbound internet connectivity provided through a NAT Gateway, preventing direct access from the internet.
+- **Database Tier:** Deployed in private subnets and routes outbound traffic through the NAT Gateway while remaining isolated from direct internet access, enhancing security.
+
 
