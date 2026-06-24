@@ -33,4 +33,32 @@ The VPC is designed using a 3-tier architecture consisting of Web, Application, 
 - **Application Tier:** Deployed in private subnets with outbound internet connectivity provided through a NAT Gateway, preventing direct access from the internet.
 - **Database Tier:** Deployed in private subnets and routes outbound traffic through the NAT Gateway while remaining isolated from direct internet access, enhancing security.
 
+---
+
+### Step 5: Create Security Groups
+1. External-Load-Balancer-SG --> HTTP (80): 0.0.0.0/0.
+2. Web-Tier-SG --> HTTP --> Ext-LB-SG.
+3. Internal-Load-Balancer-SG --> HTTP --> Web-Tier-SG.
+4. App-Tier-SG --> Port 4000 --> Internal-LB-SG.
+5. DB-Tier-SG --> MySQL (3306) --> App-Tier-SG.
+
+<img width="1510" height="804" alt="Screenshot 2026-06-24 at 10 03 11 AM" src="https://github.com/user-attachments/assets/7e5f7ab7-c2bd-4ce3-9306-2fb8af222753" />
+
+___
+
+### Step 6: Create DB Subnet Group & RDS
+- Create DB subnet group.
+- Create RDS - Multi-AZ.
+- Place them in DB subnet group created above.
+
+<img width="1505" height="670" alt="Screenshot 2026-06-24 at 10 06 05 AM" src="https://github.com/user-attachments/assets/57a2a883-1594-497b-b1ce-4bb594d41c5b" />
+<img width="1505" height="670" alt="Screenshot 2026-06-24 at 10 06 05 AM" src="https://github.com/user-attachments/assets/22f995f6-bddc-4936-badd-001fd948ff3f" />
+
+> **Note:** Amazon RDS Multi-AZ deployments are not eligible under the AWS Free Tier. Additionally, when using the Free Tier, RDS instances can only be deployed in the Default VPC. Deploying an RDS instance in a custom VPC may incur charges.
+
+___
+
+
+
+
 
