@@ -117,11 +117,16 @@ The screenshots below demonstrate the process of creating the CloudWatch alarm a
 
 <img width="1000" height="500" alt="Review Alarm" src="https://github.com/user-attachments/assets/29089040-adfc-40b8-93fc-760e78701426" />
 
-<img width="1000" height="500" alt="Alarm Created" src="https://github.com/user-attachments/assets/e5d2711e-58b3-4b81-90f8-dbf13dd1d2a3" />
 
 > **Note:** In this project, the alarm was configured for the Application Tier ASG. The same approach can be applied to the Web Tier ASG or any other AWS resource that requires monitoring and alerting.
 
 ___
+
+### Step 11: Create CloudTrail
+Enable the cloud trail to see the all the actions performed in you account.
+<img width="1509" height="833" alt="Screenshot 2026-06-24 at 10 48 33 AM" src="https://github.com/user-attachments/assets/288d7e05-c7b0-4627-997a-8ccc38f877a6" />
+<img width="1507" height="839" alt="Screenshot 2026-06-24 at 10 48 53 AM" src="https://github.com/user-attachments/assets/01e12b5a-da9b-4e5e-ab65-d91af5247ebe" />
+
 
 
 
