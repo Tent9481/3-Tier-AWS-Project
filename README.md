@@ -58,6 +58,24 @@ ___
 
 ___
 
+### Step 7: Create Test App Server, Install Packages, Test Connections
+- [Test App-Server Commands](https://github.com/Tent9481/3-Tier-AWS-Project/blob/main/AWS_Project1-main/app-server-commands)
+- Create AMI.
+- Create launch template using AMI.
+- Create target group.
+- Create internal load balancer.
+- Create autoscaling group.
+- Edit nginx.conf file in local system by adding Internal-LB-DNS & upload the file in S3.
+<img width="1508" height="802" alt="Screenshot 2026-06-24 at 10 15 53 AM" src="https://github.com/user-attachments/assets/09109c0a-bd12-4b28-a9cc-cb3adc6e1d61" />
+<img width="1508" height="840" alt="Screenshot 2026-06-24 at 10 15 30 AM" src="https://github.com/user-attachments/assets/e8a25014-4a80-405d-98bf-b4b95646231e" />
+<img width="1509" height="803" alt="Screenshot 2026-06-24 at 10 16 14 AM" src="https://github.com/user-attachments/assets/34a61db6-6356-4053-9405-86f759312a85" />
+<img width="1512" height="836" alt="Screenshot 2026-06-24 at 10 16 34 AM" src="https://github.com/user-attachments/assets/7421c120-fed6-4343-9f1e-175a69fc549f" />
+<img width="1512" height="840" alt="Screenshot 2026-06-24 at 10 16 49 AM" src="https://github.com/user-attachments/assets/0c4fcfeb-a2b4-4668-99c0-5ee74e5a561e" />
+
+___
+
+
+
 
 
 
