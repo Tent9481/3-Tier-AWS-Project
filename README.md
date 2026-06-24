@@ -66,13 +66,67 @@ ___
 - Create internal load balancer.
 - Create autoscaling group.
 - Edit nginx.conf file in local system by adding Internal-LB-DNS & upload the file in S3.
-<img width="1508" height="802" alt="Screenshot 2026-06-24 at 10 15 53 AM" src="https://github.com/user-attachments/assets/09109c0a-bd12-4b28-a9cc-cb3adc6e1d61" />
-<img width="1508" height="840" alt="Screenshot 2026-06-24 at 10 15 30 AM" src="https://github.com/user-attachments/assets/e8a25014-4a80-405d-98bf-b4b95646231e" />
-<img width="1509" height="803" alt="Screenshot 2026-06-24 at 10 16 14 AM" src="https://github.com/user-attachments/assets/34a61db6-6356-4053-9405-86f759312a85" />
-<img width="1512" height="836" alt="Screenshot 2026-06-24 at 10 16 34 AM" src="https://github.com/user-attachments/assets/7421c120-fed6-4343-9f1e-175a69fc549f" />
-<img width="1512" height="840" alt="Screenshot 2026-06-24 at 10 16 49 AM" src="https://github.com/user-attachments/assets/0c4fcfeb-a2b4-4668-99c0-5ee74e5a561e" />
+<img width="1000" height="500" alt="Screenshot 2026-06-24 at 10 15 30 AM" src="https://github.com/user-attachments/assets/e8a25014-4a80-405d-98bf-b4b95646231e" />
+<img width="1000" height="500" alt="Screenshot 2026-06-24 at 10 15 30 AM" src="https://github.com/user-attachments/assets/e8a25014-4a80-405d-98bf-b4b95646231e" />
+<img width="1000" height="500" alt="Screenshot 2026-06-24 at 10 15 53 AM" src="https://github.com/user-attachments/assets/09109c0a-bd12-4b28-a9cc-cb3adc6e1d61" />
+<img width="1000" height="500" alt="Screenshot 2026-06-24 at 10 16 14 AM" src="https://github.com/user-attachments/assets/34a61db6-6356-4053-9405-86f759312a85" />
+<img width="1000" height="500" alt="Screenshot 2026-06-24 at 10 16 34 AM" src="https://github.com/user-attachments/assets/7421c120-fed6-4343-9f1e-175a69fc549f" />
+<img width="1000" height="500" alt="Screenshot 2026-06-24 at 10 16 49 AM" src="https://github.com/user-attachments/assets/0c4fcfeb-a2b4-4668-99c0-5ee74e5a561e" />
 
 ___
+
+### Step 8: Create Test Web Server, Install Packages (Nginx, Node.js (React)), Test Connections
+- [Test Web-Server Commands](https://github.com/Tent9481/3-Tier-AWS-Project/blob/main/AWS_Project1-main/web-server-commands)
+- Create AMI.
+- Create launch template using AMI.
+- Create target group.
+- Create external load balancer.
+- Create autoscaling group.
+
+Repeat the same steps for the Web server.
+
+___
+
+### Step 9: Configure a Route 53 DNS Record for the External Application Load Balancer
+
+> **Note:** This step is optional and requires a registered domain name. Since I did not own a domain during this project, I was unable to complete this configuration. If you have a domain name or plan to purchase one, follow the steps below to map your domain to the external Application Load Balancer (ALB).
+
+- Create a **Hosted Zone** in Amazon Route 53 for your domain.
+
+  <img width="1000" height="500" alt="Hosted Zone Creation" src="https://github.com/user-attachments/assets/0493fcc5-7b5b-4ac5-9ca0-4cfb4b6b538e" />
+
+- Create a **CNAME** (or **Alias A**) record that points your domain or subdomain to the DNS name of the external Application Load Balancer.
+
+  <img width="1000" height="500" alt="DNS Record Creation" src="https://github.com/user-attachments/assets/a46e7ca3-fb6e-4735-b6ef-7e9cdc83afa9" />
+
+___
+
+### Step 10: Configure CloudWatch Alarms and SNS Notifications
+
+To monitor the health and performance of the application, I created a CloudWatch alarm based on the **CPU Utilization** metric of the **Application Tier Auto Scaling Group (ASG)**. Whenever the CPU utilization exceeds the defined threshold, CloudWatch triggers an Amazon SNS notification, allowing administrators to take immediate action.
+
+The screenshots below demonstrate the process of creating the CloudWatch alarm and associating it with an SNS topic for email notifications.
+
+<img width="1000" height="500" alt="CloudWatch Alarm Configuration" src="https://github.com/user-attachments/assets/3f2ce435-7173-4e8a-85dd-ec2357a971b0" />
+
+<img width="1000" height="500" alt="Select Metric" src="https://github.com/user-attachments/assets/0c8445f8-4acf-42c3-af6a-e1e7f17b06db" />
+
+<img width="1000" height="500" alt="Configure Threshold" src="https://github.com/user-attachments/assets/5f92a9a2-36bf-4a6e-8cd7-2d3eef68c851" />
+
+<img width="1000" height="500" alt="Configure SNS Notification" src="https://github.com/user-attachments/assets/7ff0d24a-42d7-4a14-887d-31b7159f3c22" />
+
+<img width="1000" height="500" alt="Review Alarm" src="https://github.com/user-attachments/assets/29089040-adfc-40b8-93fc-760e78701426" />
+
+<img width="1000" height="500" alt="Alarm Created" src="https://github.com/user-attachments/assets/e5d2711e-58b3-4b81-90f8-dbf13dd1d2a3" />
+
+> **Note:** In this project, the alarm was configured for the Application Tier ASG. The same approach can be applied to the Web Tier ASG or any other AWS resource that requires monitoring and alerting.
+
+___
+
+
+
+
+
 
 
 
