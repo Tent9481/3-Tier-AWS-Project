@@ -4,7 +4,6 @@
 
 ### Step 1: Download Code from GitHub in Your Local System
 ___
-
 ### Step 2: Create Two S3 Buckets
 - Create one S3 bucket for storing web-server & app-server code.
 - Upload the code to your S3 from your local system.
@@ -12,4 +11,8 @@ ___
 <img width="1000" height="500" alt="Screenshot 2026-06-24 at 9 21 47 AM" src="https://github.com/user-attachments/assets/1b194477-495b-46ef-a8e1-4640602abfea" />
 <img width="1000" height="500" alt="Screenshot 2026-06-24 at 9 22 10 AM" src="https://github.com/user-attachments/assets/94d8511b-d43d-4c1f-8dd4-a51f5743b701" />
 In my case "3tier-22-06-2026" bucket-name to store the code and "vpc-flowlogs-22-06-2026" bucket-name for VPC flow logs.
+
 ---
+### Step 3: Create IAM Role with Policies
+- **Amazon S3 Read-Only Access:** Granted EC2 instances read-only permissions to securely retrieve application code and artifacts from Amazon S3.
+- **Amazon SSM Managed Instance Core:** Enabled secure access to EC2 instances through AWS Systems Manager Session Manager, eliminating the need to open SSH (port 22). This approach enhances security by reducing the attack surface and removing the dependency on direct SSH access.
