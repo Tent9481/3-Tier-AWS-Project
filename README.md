@@ -122,10 +122,33 @@ The screenshots below demonstrate the process of creating the CloudWatch alarm a
 
 ___
 
-### Step 11: Create CloudTrail
-Enable the cloud trail to see the all the actions performed in you account.
-<img width="1509" height="833" alt="Screenshot 2026-06-24 at 10 48 33 AM" src="https://github.com/user-attachments/assets/288d7e05-c7b0-4627-997a-8ccc38f877a6" />
-<img width="1507" height="839" alt="Screenshot 2026-06-24 at 10 48 53 AM" src="https://github.com/user-attachments/assets/01e12b5a-da9b-4e5e-ab65-d91af5247ebe" />
+### Step 11: Configure AWS CloudTrail
+
+AWS CloudTrail was enabled to record and monitor all API activities performed within the AWS account. CloudTrail provides an audit trail of user actions and service events, helping with security monitoring, troubleshooting, governance, and compliance.
+
+Follow the steps below to create a CloudTrail trail and start capturing account activity:
+
+<img width="1000" height="500" alt="Create CloudTrail Trail" src="https://github.com/user-attachments/assets/288d7e05-c7b0-4627-997a-8ccc38f877a6" />
+
+<img width="1000" height="500" alt="CloudTrail Configuration" src="https://github.com/user-attachments/assets/01e12b5a-da9b-4e5e-ab65-d91af5247ebe" />
+
+> **Note:** CloudTrail records management events such as resource creation, modification, and deletion across AWS services. These logs can be stored in Amazon S3 for auditing and compliance purposes.
+
+___
+
+## Can Access the application using External Load Balancer
+<img width="1511" height="901" alt="Screenshot 2026-06-24 at 10 52 34 AM" src="https://github.com/user-attachments/assets/f3bc5475-3a1d-4e89-868b-105cbc529027" />
+
+___
+
+## Conclusion
+
+In this project, I successfully designed and implemented a production-ready 3-tier architecture on AWS. The solution consists of a Web Tier, Application Tier, and Database Tier deployed in a VPC, following security and high-availability best practices.
+
+Key AWS services such as EC2, Application Load Balancer, Auto Scaling Groups, RDS, S3, IAM, CloudWatch, SNS, and CloudTrail were integrated to create a scalable, secure, and highly available environment. The architecture ensures controlled access between tiers, supports automatic scaling based on demand, and provides comprehensive monitoring, alerting, and auditing capabilities.
+
+
+This project demonstrates the core principles of cloud architecture, including scalability, security, reliability, fault tolerance, and operational excellence, making it a strong foundation for deploying real-world production workloads on AWS.
 
 
 
